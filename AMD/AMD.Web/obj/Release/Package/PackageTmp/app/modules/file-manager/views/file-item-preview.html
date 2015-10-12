@@ -1,0 +1,29 @@
+﻿<!-- file preview info -->
+<div class="box-body" ng-show="isPreviewAction">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <img src="{{previewInfo.src}}" width="500" height="500" />
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            description:
+            {{previewInfo.desc}}
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            created on:
+            {{previewInfo.createdOn}}
+            <button class="btn btn-default" ng-click="closePreview()">
+                <i class="fa fa-times"></i> close
+            </button>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMD.Web", "AMD.Web\AMD.Web.csproj", "{BD6748B6-FC5B-4251-B540-E17AA371616E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMD.WebApi", "AMD.WebApi\AMD.WebApi.csproj", "{42725C34-0A7F-4748-8062-5F13D9DC08C7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD6748B6-FC5B-4251-B540-E17AA371616E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD6748B6-FC5B-4251-B540-E17AA371616E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD6748B6-FC5B-4251-B540-E17AA371616E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD6748B6-FC5B-4251-B540-E17AA371616E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42725C34-0A7F-4748-8062-5F13D9DC08C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42725C34-0A7F-4748-8062-5F13D9DC08C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42725C34-0A7F-4748-8062-5F13D9DC08C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42725C34-0A7F-4748-8062-5F13D9DC08C7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

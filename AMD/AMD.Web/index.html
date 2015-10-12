@@ -1,0 +1,434 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AdminLTE 2 | Dashboard</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <!-- Bootstrap 3.3.2 -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- FontAwesome 4.3.0 -->
+    <!--<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />-->
+    <link href="Content/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Ionicons 2.0.0 -->
+    <!--<link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />-->
+    <link href="Content/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
+    <!-- Theme style -->
+    <link href="dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <!--<link href="dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />-->
+    <link href="dist/css/skins/_all-skins.css" rel="stylesheet" type="text/css" />
+    <!-- iCheck -->
+    <link href="plugins/iCheck/flat/blue.css" rel="stylesheet" type="text/css" />
+    <!-- Morris chart -->
+    <link href="plugins/morris/morris.css" rel="stylesheet" type="text/css" />
+    <!-- jvectormap -->
+    <link href="plugins/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+    <!-- Date Picker -->
+    <link href="plugins/datepicker/datepicker3.css" rel="stylesheet" type="text/css" />
+    <!-- Daterange picker -->
+    <link href="plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
+
+
+    <link href="Scripts/angular-treeview/css/angular.treeview.css" rel="stylesheet" />
+
+    <style>
+        body {
+            background-color: #F4F1ED;
+        }
+
+        .pointer {
+            cursor: pointer;
+        }
+
+        .highlight {
+            color: #fff;
+            background-color: #3498db;
+        }
+
+        .expanded {
+            height: 400px;
+        }
+
+        .position-fixed {
+            position: fixed;
+            z-index: 99999999;
+        }
+
+        .modal-header {
+            min-height: 16.43px;
+            padding: 15px;
+            border-bottom: 1px solid #e5e5e5;
+            background-color: rgb(40, 178, 212);
+        }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="skin-custom" ng-app="amdApp" ng-controller="FileManagerController">
+    <div class="wrapper">
+
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="index2.html" class="logo"><b>AMD</b> System</a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image" />
+                                <span class="hidden-xs">Alexander Pierce</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header">
+                                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+                                    <p>
+                                        Alexander Pierce - Web Developer
+                                        <small>Member since Nov. 2012</small>
+                                    </p>
+                                </li>
+                                <!-- Menu Body -->
+                                <li class="user-body">
+                                    <div class="col-xs-4 text-center">
+                                        <a href="#">Followers</a>
+                                    </div>
+                                    <div class="col-xs-4 text-center">
+                                        <a href="#">Sales</a>
+                                    </div>
+                                    <div class="col-xs-4 text-center">
+                                        <a href="#">Friends</a>
+                                    </div>
+                                </li>
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <!--<div class="user-panel">
+                  <div class="pull-left image">
+                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+                  </div>
+                  <div class="pull-left info">
+                    <p>Alexander Pierce</p>
+
+                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                  </div>
+                </div>-->
+                <!-- search form -->
+                <!--<form action="#" method="get" class="sidebar-form">
+                  <div class="input-group">
+                    <input type="text" name="q" class="form-control" placeholder="Search..."/>
+                    <span class="input-group-btn">
+                      <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+                    </span>
+                  </div>
+                </form>-->
+                <!-- /.search form -->
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu">
+                    <li>
+                        <a href="pages/calendar.html">
+                            <i class="fa fa-folder"></i> <span>File Manager</span>
+                            <!--<small class="label pull-right bg-red">3</small>-->
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pages/mailbox/mailbox.html">
+                            <i class="fa fa-users"></i> <span>User Manager</span>
+                            <!--<small class="label pull-right bg-yellow">12</small>-->
+                        </a>
+                    </li>
+                    <li><a href="documentation/index.html"><i class="fa fa-gear "></i> System Setting</a></li>
+                    <li class="header">Reports</li>
+                    <li><a href="#"><i class="fa fa-circle-o text-danger"></i> Dayly Report</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o text-warning"></i> Monthly Report</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o text-info"></i> Yearly Report</a></li>
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+        <!-- Right side column. Contains the navbar and content of the page -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    File Manager
+                </h1>
+            </section>
+            <!-- Main content -->
+            <section class="content">
+                <!-- Small boxes (Stat box) -->
+
+                <div class="box box-default">
+
+                    <div class="box-header with-border">
+                        <div class="text-left">
+                            <a class="btn btn-default"><i class="fa fa-folder-open" style="color: #E4DD51;"></i> New</a>
+                            <button class="btn btn-default" ng-click="openUploadModal()" ng-disabled="isPreviewAction">
+                                <i class="fa fa-cloud-upload" style="color: #1270bf;"></i> Upload
+                            </button>
+                            <button class="btn btn-default" ng-disabled="itemSelect == null">
+                                <i class="fa fa-cloud-download" style="color: #1270bf;"></i> Download
+                            </button>
+                            <button class="btn btn-default" ng-click="removeItem()" ng-disabled="isPreviewAction || (itemSelect == null)">
+                                <i class="fa fa-trash" style="color: #1270bf;"></i> Remove
+                            </button>
+                            <button class="btn btn-default" ng-click="openRenameModal()" ng-disabled="isPreviewAction || (itemSelect == null)">
+                                <i class="fa fa-exchange" style="color: #1270bf;"></i> Rename
+                            </button>
+                            <button class="btn btn-default" ng-click="cancelItemSelect()" ng-disabled="isPreviewAction || (itemSelect == null)">
+                                <i class="fa fa-times"></i> Cancel
+                            </button>
+                            <button class="btn btn-default" ng-click="levelUp()" ng-disabled="currentLevel == 1">
+                                <i class="fa fa-reply"></i> Up
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="box-body">
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="box-body">
+                                    <div style="height: 500px; border: 1px #ccc solid; padding-top: 10px;">
+                                        <div data-angular-treeview="true"
+                                             data-tree-id="abc"
+                                             data-tree-model="treedata"
+                                             data-node-id="id"
+                                             data-node-label="label"
+                                             data-node-children="children">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+
+                                <!-- file items -->
+                                <div class="box-body" ng-show="!isPreviewAction">
+                                    <div context-menu="onPanelRightClick('panel right click')"
+                                         context-menu-close="onClose('close panel right click')"
+                                         context-menu-margin-bottom="10"
+                                         id="panel-work-space"
+                                         data-target="menu-panel-work-space" style="height: 500px;">
+
+                                        <div ng-repeat="item in currentLevelItems" style="position: relative; float: left; margin-left: 2px;" onmouseover="this.style.background = '#ffffff'; this.style.border = '#ccc 1px solid'" onmouseout="this.style.background = ''; this.style.border = ''">
+                                            <div style="width: 100px; text-align: center; cursor: pointer; padding: 2px;"
+                                                 ng-style="{'background-color': item.isHighlight ? 'rgb(108, 167, 255)' : ''}"
+                                                 context-menu="onRightClick(message)"
+                                                 context-menu-close="onClose(closeMessage)"
+                                                 context-menu-margin-bottom="10"
+                                                 id="panel-{{ $index }}"
+                                                 data-target="menu-{{ $index }}"
+                                                 ng-click="item.type == 'folder' ? openFolder(item.children) : item.type == 'txt' ? highlightItem(item) : openPreview(item)">
+
+                                                <!--<span class="badge bg-light-blue-gradient" ng-if="item.type == 'folder' && item.children.length > 0">{{item.children.length}}</span>-->
+                                                <i class="fa fa-folder-open" style="color: #FFD283; font-size: 28px;" ng-if="item.type == 'folder'"></i>
+
+                                                <!-- document type -->
+                                                <i class="fa fa-file-text" style="font-size: 28px;" ng-if="item.type == 'txt'"></i>
+
+                                                <!-- picture type -->
+                                                <!--<i class="fa fa-file-image-o" ng-if="item.type == 'jpg' || item.type == 'png'"></i>-->
+                                                <img src="{{item.src}}" style="position: relative; top: 0px;" height="30" ng-if="item.type == 'jpg' || item.type == 'png'" />
+                                                <br />
+                                                {{item.label}}
+                                            </div>
+
+                                            <!-- menu context -->
+                                            <div class="dropdown position-fixed" id="menu-{{ $index }}">
+                                                <ul class="dropdown-menu" role="menu">
+                                                    <li>
+                                                        <a class="pointer" role="menuitem" tabindex="1" ng-click="openFolder()">
+                                                            <i class="fa fa-folder-open"></i>Open
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pointer" role="menuitem" tabindex="2" ng-click="deleteFolder()">
+                                                            <i class="fa fa-times"></i>Delete
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pointer" role="menuitem" tabindex="3" ng-click="copyFolder">
+                                                            <i class="fa fa-copy"></i>Copy
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="pointer" role="menuitem" tabindex="4" ng-click="copyFolder">
+                                                            <i class="fa fa-paste"></i>Paste
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- menu panel wrok space context -->
+                                    <div class="dropdown position-fixed" id="menu-panel-work-space">
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li>
+                                                <a class="pointer" role="menuitem" tabindex="1" ng-click="createNewFolder()">
+                                                    <i class="fa fa-plus"></i>New
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="pointer" role="menuitem" tabindex="2" ng-click="rootDirectory()">
+                                                    <i class="fa fa-reply"></i>Root Directory
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- file preview info -->
+                                <div class="box-body" ng-show="isPreviewAction">
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-10">
+                                            <img src="{{previewInfo.src}}" width="500" height="500" />
+                                        </div>
+                                        <div class="col-md-1"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-10">
+                                            description:
+                                            {{previewInfo.desc}}
+                                        </div>
+                                        <div class="col-md-1"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-10">
+                                            created on:
+                                            {{previewInfo.createdOn}}
+                                        </div>
+                                        <div class="col-md-1"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-10">
+                                            <button class="btn btn-default" ng-click="download(previewInfo.file)">
+                                                <i class="fa fa-cloud-download"></i> download
+                                            </button>
+                                            <button class="btn btn-default" ng-click="closePreview()">
+                                                <i class="fa fa-times"></i> close
+                                            </button>
+                                        </div>
+                                        <div class="col-md-1"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Main row -->
+
+            </section><!-- /.content -->
+        </div><!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 2.0
+            </div>
+            <strong>Copyright &copy; 2015 <a href="http://almsaeedstudio.com">AMD</a>.</strong> All rights reserved.
+        </footer>
+    </div><!-- ./wrapper -->
+    <!-- jQuery 2.1.3 -->
+    <script src="plugins/jQuery/jQuery-2.1.3.min.js"></script>
+    <!-- jQuery UI 1.11.2 -->
+    <!--<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.min.js" type="text/javascript"></script>-->
+    <script src="plugins/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <!-- Bootstrap 3.3.2 JS -->
+    <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <!-- Morris.js charts -->
+    <!--<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>-->
+    <script src="plugins/raphael-min.js"></script>
+    <!--<script src="plugins/morris/morris.min.js" type="text/javascript"></script>-->
+    <!-- Sparkline -->
+    <script src="plugins/sparkline/jquery.sparkline.min.js" type="text/javascript"></script>
+    <!-- jvectormap -->
+    <script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js" type="text/javascript"></script>
+    <script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js" type="text/javascript"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="plugins/jqueryKnob/jquery.knob.js" type="text/javascript"></script>
+    <!-- daterangepicker -->
+    <script src="plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
+    <!-- datepicker -->
+    <script src="plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>
+    <!-- Bootstrap WYSIHTML5 -->
+    <script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
+    <!-- iCheck -->
+    <script src="plugins/iCheck/icheck.min.js" type="text/javascript"></script>
+    <!-- Slimscroll -->
+    <script src="plugins/slimScroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <!-- FastClick -->
+    <script src='plugins/fastclick/fastclick.min.js'></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/app.min.js" type="text/javascript"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <!--<script src="dist/js/pages/dashboard.js" type="text/javascript"></script>-->
+    <!-- AdminLTE for demo purposes -->
+    <script src="dist/js/demo.js" type="text/javascript"></script>
+
+
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-treeview/angular.treeview.js"></script>
+    <script src="Scripts/ng-context-menu.js"></script>
+    <script src="Scripts/angular-ui/ui-bootstrap.min.js"></script>
+    <script src="Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+    <script src="Scripts/angular-route.min.js"></script>
+
+
+    <script src="app/app.js"></script>
+    <script src="app/modules/services/common/common-services.js"></script>
+    <script src="app/modules/file-manager/controllers/file-manager-controller.js"></script>
+
+
+    <script type="text/javascript">
+        $.ready(function () {
+            $('body > .jvectormap-label').remove();
+            $('body > .no-print').remove();
+        });
+    </script>
+
+
+</body>
+</html>

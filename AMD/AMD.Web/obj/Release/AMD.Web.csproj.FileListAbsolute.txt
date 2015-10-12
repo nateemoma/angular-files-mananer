@@ -1,0 +1,6 @@
+D:\Work Space\Programming\2015\AMD\AMD\AMD.Web\bin\AMD.Web.dll.config
+D:\Work Space\Programming\2015\AMD\AMD\AMD.Web\bin\AMD.Web.dll
+D:\Work Space\Programming\2015\AMD\AMD\AMD.Web\bin\AMD.Web.pdb
+D:\Work Space\Programming\2015\AMD\AMD\AMD.Web\obj\Release\AMD.Web.csprojResolveAssemblyReference.cache
+D:\Work Space\Programming\2015\AMD\AMD\AMD.Web\obj\Release\AMD.Web.dll
+D:\Work Space\Programming\2015\AMD\AMD\AMD.Web\obj\Release\AMD.Web.pdb

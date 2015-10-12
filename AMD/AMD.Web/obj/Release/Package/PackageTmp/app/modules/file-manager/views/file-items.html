@@ -1,0 +1,72 @@
+﻿<div context-menu="onPanelRightClick('panel right click')"
+     context-menu-close="onClose('close panel right click')"
+     context-menu-margin-bottom="10"
+     id="panel-work-space"
+     data-target="menu-panel-work-space" style="height: 500px;">
+
+    <div ng-repeat="item in currentLevelItems" style="position: relative; float: left;">
+        <a class="btn btn-app"
+           context-menu="onRightClick(message)"
+           context-menu-close="onClose(closeMessage)"
+           context-menu-margin-bottom="10"
+           id="panel-{{ $index }}"
+           data-target="menu-{{ $index }}"
+           ng-dblclick="openFolder(item.children)">
+
+            <span class="badge bg-light-blue-gradient" ng-if="item.type == 'folder' && item.children.length > 0">{{item.children.length}}</span>
+            <i class="fa fa-folder-open" style="color: #FFD283;" ng-if="item.type == 'folder'"></i>
+
+            <!-- document type -->
+            <i class="fa fa-file-text" ng-if="item.type == 'txt'"></i>
+
+            <!-- picture type -->
+            <i class="fa fa-file-image-o" ng-if="item.type == 'jpg' || item.type == 'png'" ng-click="openPreview(item)"></i>
+
+            {{item.label}}
+        </a>
+
+        <!-- menu context -->
+        <div class="dropdown position-fixed" id="menu-{{ $index }}">
+            <ul class="dropdown-menu" role="menu">
+                <li>
+                    <a class="pointer" role="menuitem" tabindex="1" ng-click="openFolder()">
+                        <i class="fa fa-folder-open"></i>Open
+                    </a>
+                </li>
+                <li>
+                    <a class="pointer" role="menuitem" tabindex="2" ng-click="deleteFolder()">
+                        <i class="fa fa-times"></i>Delete
+                    </a>
+                </li>
+                <li>
+                    <a class="pointer" role="menuitem" tabindex="3" ng-click="copyFolder">
+                        <i class="fa fa-copy"></i>Copy
+                    </a>
+                </li>
+                <li>
+                    <a class="pointer" role="menuitem" tabindex="4" ng-click="copyFolder">
+                        <i class="fa fa-paste"></i>Paste
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- menu panel wrok space context -->
+<div class="dropdown position-fixed" id="menu-panel-work-space">
+    <ul class="dropdown-menu" role="menu">
+        <li>
+            <a class="pointer" role="menuitem" tabindex="1" ng-click="createNewFolder()">
+                <i class="fa fa-plus"></i>New
+            </a>
+        </li>
+        <li>
+            <a class="pointer" role="menuitem" tabindex="2" ng-click="rootDirectory()">
+                <i class="fa fa-reply"></i>Root Directory
+            </a>
+        </li>
+    </ul>
+</div>
